@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useState } from 'react';
 
 const Bmi_calc = () => {
   
     const [weight,setWeight] = useState(70);
     const [height,setHeight] = useState(180);
-    const [result,setResult] = useState(weight/(height/100)**2);
 
     function onWeightChange(event){
         setWeight(event.target.value);
-        setResult(weight/(height/100)**2);
     }
 
     function onHeightChange(event){
         setHeight(event.target.value);
-        setResult(weight/(height/100)**2);
     }
+
+    const result = useMemo(() => {
+        const hm=height/100
+        return weight/(hm*hm)
+    }, [weight, height]);
 
     return (
     <div>
