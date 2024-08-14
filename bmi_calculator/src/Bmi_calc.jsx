@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { useState } from 'react';
+import './index.css';
 
 const Bmi_calc = () => {
   
@@ -19,18 +20,40 @@ const Bmi_calc = () => {
         return weight/(hm*hm)
     }, [weight, height]);
 
+    const analysis = useMemo(() => {
+        if(result<18.5){
+            return "Underweight"
+        }else if(result>=18.5 && result<24.9){
+            return "Normal weight"
+        }else if(result>=24.9 && result<29.9){
+            return "Pre-obese"
+        }else if(result>=29.9 && result<34.9){
+            return "Class 1 Obese"
+        }
+        else if(result>=34.9 && result<39.9){
+            return "Class 2 Obese"
+        }
+        else if(result>=40){
+            return "Class 3 Obese"
+        }
+    },[result]);
+
     return (
-    <div>
-        <h1>BMI Calculator</h1>
-        <div className="input-section">
-            <p className="slider-output">Weight: {weight}kg</p>
+    <div className="bg-slate-200 h-screen flex flex-col place-items-center justify-center">
+        <div id="input-section" className="w-1/3 flex flex-col">
+            <h1 className="bg-[#1d4ed8] text-white text-center py-5 my-5 rounded-md">BMI Calculator</h1>
+
+            <p id="slider-output" className="py-2 my-2">Weight: {weight}kg</p>
             <input type="range" className="input-slider" step="1" min="20" max="200" value={weight} onChange={onWeightChange}/>
-            <p className="slider-output">Height: {height}cm</p>
+
+            <p id="slider-output" className="py-2 my-2">Height: {height}cm</p>
             <input type="range" className="input-slider" step="1" min="50" max="250" value={height} onChange={onHeightChange}/>
-        </div>
-        <div className="output-section">
+        
+            <div id="output-section" className="py-3 my-3 text-center">
             <p>Your BMI is:</p>
             <p className="output">{result.toFixed(2)}</p>
+            <p id="anlysis" className="my-2">You are {analysis}</p>
+        </div>
         </div>
     </div>
   )
