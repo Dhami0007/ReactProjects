@@ -40,7 +40,7 @@ const Bmi_calc = () => {
 
     return (
     <div className="bg-slate-200 h-screen flex flex-col place-items-center justify-center">
-        <div id="input-section" className="w-1/3 flex flex-col">
+        <div id="input-section" className="w-1/4 flex flex-col">
             <h1 className="bg-[#1d4ed8] text-white text-center py-5 my-5 rounded-md">BMI Calculator</h1>
 
             <p id="slider-output" className="py-2 my-2">Weight: {weight}kg</p>
@@ -52,7 +52,7 @@ const Bmi_calc = () => {
             <div id="output-section" className="py-3 my-3 text-center">
             <p>Your BMI is:</p>
             <p className="output">{result.toFixed(2)}</p>
-            <p id="anlysis" className="my-2">You are {analysis}</p>
+            <p id="anlysis" className="my-3 py-2 rounded-md bg-slate-300 ">You are {analysis}</p>
         </div>
         </div>
     </div>
