@@ -49,10 +49,10 @@ const Bmi_calc = () => {
             <p id="slider-output" className="py-2 my-2">Height: {height}cm</p>
             <input type="range" className="input-slider" step="1" min="50" max="250" value={height} onChange={onHeightChange}/>
         
-            <div id="output-section" className="py-3 my-3 text-center">
+            <div id="output-section" className="py-3 my-3 flex flex-col place-items-center">
             <p>Your BMI is:</p>
-            <p className="output">{result.toFixed(2)}</p>
-            <p id="anlysis" className="my-3 py-2 rounded-md bg-slate-300 ">You are {analysis}</p>
+            <div className="bg-green-500 p-2 my-2 rounded-md text-white"><p className="output">{result.toFixed(2)}</p></div>
+            <p id="anlysis" className="my-3 p-3 rounded-md bg-slate-300 ">You are {analysis}</p>
         </div>
         </div>
     </div>
