@@ -17,6 +17,11 @@ const App = () => {
         } 
       }
       
+      if (operator === null){
+        setInput(input)
+        return
+      }
+      else{
       const [num1, num2] = input.split(operator).map(parseFloat)
 
       switch(operator){
@@ -34,7 +39,7 @@ const App = () => {
           break
         default:
           setInput("Error")
-      }
+      }}
 
     }
     catch(err){
