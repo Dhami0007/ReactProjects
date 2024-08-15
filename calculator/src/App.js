@@ -4,17 +4,17 @@ import './index.css'
 const App = () => {
 
   const [input, setInput] = React.useState("")
+  
 
   function handleEval(input){
     try{
-      const operators = ['+', '-', '*', '/']
       let operator = null
-      
+      const operators = ['+', '-', 'x', '/']
       for(let i=0; i<input.length; i++){
         if (operators.includes(input[i])){
           operator = input[i]
           break
-        }
+        } 
       }
       
       const [num1, num2] = input.split(operator).map(parseFloat)
@@ -35,21 +35,15 @@ const App = () => {
         default:
           setInput("Error")
       }
+
     }
     catch(err){
       setInput("Error")
+      console.log(err)
     }
   }
 
   function handleClick(value){
-
-    if (input == "Error"){
-      setInput("")
-    }
-    else if(input == "Infinity"){
-      setInput("")
-    }
-
 
     if (value === "C"){
       setInput("")
