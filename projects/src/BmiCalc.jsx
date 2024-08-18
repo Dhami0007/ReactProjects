@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 import { useState } from 'react';
 import './index.css';
+import Navigation from './navigation';
 
 const Bmi_calc = () => {
   
@@ -39,6 +40,8 @@ const Bmi_calc = () => {
     },[result]);
 
     return (
+    <div>
+        <Navigation/>
     <div className="bg-slate-200 h-screen flex flex-col place-items-center justify-center">
         <div id="input-section" className="w-1/4 flex flex-col border rounded-lg p-5 border-black">
             <h1 className="bg-[#1d4ed8] text-white text-center py-5 my-5 rounded-md">BMI Calculator</h1>
@@ -55,6 +58,7 @@ const Bmi_calc = () => {
             <p id="anlysis" className="my-3 p-3 rounded-md bg-slate-300 ">You are {analysis}</p>
         </div>
         </div>
+    </div>
     </div>
   )
 }

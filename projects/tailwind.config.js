@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/Bmi_calc.jsx"
-  ],
+  content: ["./src/**/*.{html,js,jsx}"],
   theme: {
     extend: {},
   },

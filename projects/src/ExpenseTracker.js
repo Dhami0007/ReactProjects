@@ -1,5 +1,6 @@
 import React from 'react'
 import './index.css'
+import Navigation from './navigation'
 
 const ExpenseTracker = () => {
 
@@ -79,11 +80,13 @@ const ExpenseTracker = () => {
     }
 
   return (
+    <div>
+        <Navigation/>
     <div id="container" className="bg-slate-200 h-screen flex flex-col place-items-center">
         <div id="input-group" className="bg-slate-100 mt-10 p-5 text-4xl font-bold rounded-lg shadow-sm shadow-slate-500 w-1/3 flex flex-col place-items-center">
             <h1 className="py-5 text-center  my-3">Expense Tracker</h1>
-            <input type="text" value={expense} placeholder="Enter Expense" onChange={handleExpChange} className="text-2xl font-medium text-slate-400 px-4"/><br/>
-            <input type="number" value={amount} placeholder="Enter Amount" onChange={handleAmtChange} className="text-2xl font-medium text-slate-400 px-4"/><br/>
+            <input value={expense} placeholder="Enter Expense" onChange={handleExpChange} className="text-2xl font-medium text-slate-400 px-4 w-3/4"/><br/>
+            <input type="number" value={amount} placeholder="Enter Amount" onChange={handleAmtChange} className="text-2xl font-medium text-slate-400 px-4 w-3/4 "/><br/>
             <div className="flex flex-col place-items-center">
                 <button onClick={addToList} className ="py-3 px-5 text-center rounded-lg shadow-md shadow-slate-300 bg-[#6ee7b7] hover:shadow-slate-400 hover:bg-[#44c692] ">Add Expense</button>
             </div>
@@ -107,6 +110,7 @@ const ExpenseTracker = () => {
             </ul>
         </div>
 
+    </div>
     </div>
   )
 }
