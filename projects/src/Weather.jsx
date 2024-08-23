@@ -34,11 +34,11 @@ const Weather = () => {
 
     function backgroundChange(temp){
         if(temp < 10){
-            container.current.style.backgroundImage =`url(images/cold.jpg)`
+            container.current.style.backgroundImage =`url(images/weather/cold.jpg)`
         } else if(temp >= 10 && temp < 20){
-            container.current.style.backgroundImage =`url(images/cloudy.jpg)`
+            container.current.style.backgroundImage =`url(images/weather/cloudy.jpg)`
         } else {
-            container.current.style.backgroundImage =`url(images/sunny.jpg)`
+            container.current.style.backgroundImage =`url(images/weather/sunny.jpg)`
         }
         
     }

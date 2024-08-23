@@ -20,6 +20,9 @@ const Layout = () => {
         <li className="m-2 py-1 px-2 rounded-md bg-slate-200 w-1/5 text-center">
             <Link to="/weather">Weather</Link>
         </li>
+        <li className="m-2 py-1 px-2 rounded-md bg-slate-200 w-1/5 text-center">
+            <Link to="/shopping">Shopping</Link>
+        </li>
       </ul>
     </div>
   )

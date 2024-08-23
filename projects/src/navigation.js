@@ -18,6 +18,9 @@ const Navigation = () => {
                 <li className="mx-2 py-1 px-2 rounded-md bg-slate-200">
                     <Link to="/weather">Weather</Link>
                 </li>
+                <li className="mx-2 py-1 px-2 rounded-md bg-slate-200">
+                    <Link to="/shopping">Shopping</Link>
+                </li>
             </ul>
       </nav>
     </div>
