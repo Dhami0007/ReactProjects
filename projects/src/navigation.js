@@ -15,7 +15,7 @@ const Navigation = () => {
                 <li className="mx-2 py-1 px-2 rounded-md bg-slate-200">
                     <Link to="/bmi">BMI Calculator</Link>
                 </li>
-                <li className="mx-2 py-1 px-2 rounded-md bg-slate-200 w-1/5 text-center">
+                <li className="mx-2 py-1 px-2 rounded-md bg-slate-200">
                     <Link to="/weather">Weather</Link>
                 </li>
             </ul>

@@ -1,7 +1,6 @@
 import React from 'react'
 import Navigation from './navigation' 
 import './index.css'
-import './images/cold.jpg'
 import { useState, useRef } from 'react'
 
 const Weather = () => {
@@ -34,27 +33,29 @@ const Weather = () => {
     }
 
     function backgroundChange(temp){
-        console.log("Checking temp", temp)
-        if (temp < 16){
-            container.current.style.backgroundImage = "url('./images/cold.jpg')";
+        if(temp < 10){
+            container.current.style.backgroundImage =`url(images/cold.jpg)`
+        } else if(temp >= 10 && temp < 20){
+            container.current.style.backgroundImage =`url(images/cloudy.jpg)`
+        } else {
+            container.current.style.backgroundImage =`url(images/sunny.jpg)`
         }
-        else if (temp >= 16 && temp < 25){
-            container.current.style.backgroundImage = "url('./images/cloudy.jpg')";
-        }
-        else{
-            container.current.style.backgroundImage = "url('./images/sunny.jpg')";
-        }
+        
     }
 
   return (
     <div>
-        <Navigation />
-        <div id="container" className="p-16 flex flex-col place-items-center h-screen" ref={container}>
-            <div id="search">
-                <input type="text" id="search" placeholder="Enter city name" className="px-2 py-1 rounded-md border border-slate-400 text-black hover:shadow-md mb-10"
-                value={place} onChange={handleChange}
-                onKeyDown={handleKeyPress}/>
-            </div>
+        <div id="container" className="px-16 pb-16 flex flex-col place-items-center h-screen bg-cover bg-center bg-no-repeat" ref={container}>
+            <nav className="justify-start w-screen mb-3">
+                <Navigation />
+            </nav>
+
+            <div id="weather-stuff" className="flex flex-col place-items-center p-10 w-screen">
+            
+            <input type="text" id="search" placeholder="Enter city name" className="py-3 rounded-md border border-slate-400 text-black hover:shadow-md mb-10 w-1/3 text-xl text-center"
+            value={place} onChange={handleChange}
+            onKeyDown={handleKeyPress}/>
+            
             <div id="weather-box" className="p-4 flex flex-col place-items-center">
                 {weather.main ? 
                 <>
@@ -71,6 +72,8 @@ const Weather = () => {
                 <h2>Nothing to show yet</h2>}
                 
             </div>
+            </div> 
+            
         </div>
     </div>
   )
