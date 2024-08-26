@@ -1,6 +1,6 @@
 import React from 'react'
-import './index.css'
-import Navigation from './navigation'
+import '../index.css'
+import Navigation from '../navigation'
 
 const Calculator = () => {
 

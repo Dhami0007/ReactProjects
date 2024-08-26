@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import { useState } from 'react';
-import './index.css';
-import Navigation from './navigation';
+import '../index.css';
+import Navigation from '../navigation';
 
 const Bmi_calc = () => {
   

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ExpenseTracker from './ExpenseTracker'; 
-import Calculator from './Calculator';
-import BmiCalc from './BmiCalc';
+import ExpenseTracker from './Expense/ExpenseTracker.js'; 
+import Calculator from './Calc/Calculator.js';
+import BmiCalc from './BMI/BmiCalc.jsx';
 import Layout from './Layout';
-import Weather from './Weather';
-import ShoppingCart from './ShoppingCart';
+import Weather from './Weather/Weather';
+import ShoppingCart from './Shopping/ShoppingCart.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
